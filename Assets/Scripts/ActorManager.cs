@@ -19,9 +19,9 @@ public class ActorManager : MonoBehaviour
     void Start()
     {
         //Debug.Log("Start");
-        GameObject go = new GameObject("Actor");
-        go.SetActive(false);
-        Actor actor = go.AddComponent<Actor>();
+        GameObject go = new GameObject("Actor");  //Actor라는 새로운 오브젝트를 추가하고 위치를 go에 넣어라.
+        go.SetActive(false);                                      // Active를 비활성화해라.
+        Actor actor = go.AddComponent<Actor>();    // Actor라는 component를 추가하고 그 component의 위치를 actor라 한다. 
         actor.enabled = false;
         actor.actorName = "Ashley";
         actor.actorType = "extra01";
