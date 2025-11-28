@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)  // 매개변수 collision에 여러 정보가 들어가 있음.
     {
-        Instantiate(hitEffect, collision.contacts[0].point, Quaternion.identity);
+        Instantiate(hitEffect, collision.contacts[0].point + collision.contacts[0].normal*0.01f, Quaternion.LookRotation(collision.contacts[0].normal)); //Identity는 회전이 000인 상태
         Destroy(gameObject); // 총알을 ㅇ
     }
 }
