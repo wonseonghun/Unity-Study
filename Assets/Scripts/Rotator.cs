@@ -45,7 +45,7 @@ public class Rotator : MonoBehaviour
         if (Target !=null)
             
 
-        // 목적위치 + 바라보는 방향의 반대방향 *거리 = 공전시 있어야 하는 위치
+        // 목적위치 + 바라보는 방향의 반대방향 *거리 = 공전시 있어야 하는 위치  //아아아아아아 회전을 시켜서 정면을 90도 바꾸고 그 거리만큼 움직여러
         transform.position = Target.position + (-transform.forward * _distance) ;
     }
 }

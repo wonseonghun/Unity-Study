@@ -28,6 +28,9 @@ public class ActorManager : MonoBehaviour
         go.SetActive(true);
         
     }
+    // 직접 끄고 키는 것을 자동화한다.
+    
+
 
     // 게임 오브젝트가 활성화되어 있는 동안 매 프레임마다 한번씩 호출
     void Update()
