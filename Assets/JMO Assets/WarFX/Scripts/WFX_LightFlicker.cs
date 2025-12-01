@@ -10,29 +10,25 @@ using System.Collections;
 [RequireComponent(typeof(Light))]
 public class WFX_LightFlicker : MonoBehaviour
 {
-	public float time = 0.05f;
-	
-	private float timer;
-	
-	void Start ()
+    private Light _fireLight;
+
+    private void Awake()
+    {
+        _fireLight = GetComponent<Light>();
+    }
+
+    void OnEnable ()
 	{
-		timer = time;
+	
 		StartCoroutine("Flicker");
 	}
 	
 	IEnumerator Flicker()
 	{
-		while(true)
-		{
-			GetComponent<Light>().enabled = !GetComponent<Light>().enabled;
-			
-			do
-			{
-				timer -= Time.deltaTime;
-				yield return null;
-			}
-			while(timer > 0);
-			timer = time;
-		}
-	}
+        _fireLight.enabled = true;
+        yield return null;
+        // 잠깐 대기
+        yield return null;
+        _fireLight.enabled = false;
+    }
 }
