@@ -14,7 +14,7 @@ public class Elevator : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Update is called once per fra
     void FixedUpdate()
     {
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, positions[_destinationIndex].localPosition, moveSpeed * Time.deltaTime);
